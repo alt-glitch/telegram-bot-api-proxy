@@ -1,4 +1,4 @@
-# telegram-bot-api-proxy
+# hermes-telegram-proxy
 
 A small, **auditable Cloudflare Worker** that reverse-proxies the Telegram Bot
 API so a bot can reach `api.telegram.org` from a region where Telegram is
@@ -17,7 +17,7 @@ secrets, and no stored state.
 
 ## Deploy your own — one click
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/alt-glitch/telegram-bot-api-proxy)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/alt-glitch/hermes-telegram-proxy)
 
 Clicking this **clones the repo into _your_ GitHub account and deploys it to
 _your_ Cloudflare account** — you end up with your own
@@ -68,13 +68,13 @@ result. You need a free [Cloudflare account](https://dash.cloudflare.com/sign-up
 ### Option A — Wrangler CLI
 
 ```bash
-git clone <this-repo> && cd telegram-bot-api-proxy
+git clone <this-repo> && cd hermes-telegram-proxy
 npx wrangler login          # opens a browser, authorizes your CF account
 npx wrangler deploy
 ```
 
 Wrangler prints your URL, e.g.
-`https://telegram-bot-api-proxy.<your-subdomain>.workers.dev`.
+`https://hermes-telegram-proxy.<your-subdomain>.workers.dev`.
 
 ### Option B — Cloudflare dashboard (no CLI)
 

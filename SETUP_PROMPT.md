@@ -18,7 +18,7 @@ into Hermes Agent so Telegram works from a region where it's blocked.
 You are helping me set up a self-hosted Telegram Bot API proxy so my Telegram
 bot can reach api.telegram.org from a region where Telegram is blocked at the
 network level. The proxy is a Cloudflare Worker (HTTPS reverse proxy for the
-Bot API). Repo: https://github.com/alt-glitch/telegram-bot-api-proxy
+Bot API). Repo: https://github.com/alt-glitch/hermes-telegram-proxy
 
 Be a patient step-by-step guide. Do ONE step at a time, wait for me to confirm
 it worked (ask me to paste output/screenshots) before moving on. Explain what
@@ -49,7 +49,7 @@ PHASE 1 — Deploy the Worker to MY Cloudflare account (pick ONE path):
                                localhost:8976 callback, and how)
     npx wrangler deploy       (prints my URL)
   Either way, the result is a URL like:
-    https://telegram-bot-api-proxy.<my-subdomain>.workers.dev
+    https://hermes-telegram-proxy.<my-subdomain>.workers.dev
   Ask me to paste that URL back to you.
 
 PHASE 2 — Verify the Worker works (before touching Hermes):

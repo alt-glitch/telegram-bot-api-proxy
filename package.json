@@ -1,5 +1,5 @@
 {
-  "name": "telegram-bot-api-proxy",
+  "name": "hermes-telegram-proxy",
   "version": "0.1.0",
   "description": "A hardened Cloudflare Worker reverse proxy for the Telegram Bot API — reach api.telegram.org from regions where it is blocked. The bot token never touches a log line. Deploy your own.",
   "type": "module",

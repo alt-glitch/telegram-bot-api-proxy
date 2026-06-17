@@ -2,6 +2,8 @@
 # Prove the DEPLOYED Worker relays to Telegram end-to-end.
 # Uses a valid-SHAPED but fake token generated in-script (no real secret typed).
 set -u
+# NOTE: live Worker URL (named telegram-bot-api-proxy on CF; repo renamed to
+# hermes-telegram-proxy without a redeploy, so this URL is unchanged).
 B="https://telegram-bot-api-proxy.balyan-sid.workers.dev"
 SECRET=$(head -c 64 /dev/urandom | base64 | tr -dc 'A-Za-z0-9_-' | head -c 35)
 TOK="123456789:${SECRET}"

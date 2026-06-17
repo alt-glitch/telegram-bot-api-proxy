@@ -16,6 +16,9 @@
 #   BOT_TOKEN=123:abc bash test/e2e.sh   # also do a REAL getMe through the proxy
 set -u
 
+# NOTE: the live Worker is named "telegram-bot-api-proxy" on Cloudflare (the repo
+# was renamed to hermes-telegram-proxy later; the deployed Worker URL did NOT
+# change since we didn't redeploy). Override with WORKER_URL=... for a fresh deploy.
 WORKER="${WORKER_URL:-https://telegram-bot-api-proxy.balyan-sid.workers.dev}"
 CONFIG="${HERMES_CONFIG:-$HOME/.hermes/config.yaml}"
 GWLOG="${GATEWAY_LOG:-$HOME/.hermes/logs/gateway.log}"
