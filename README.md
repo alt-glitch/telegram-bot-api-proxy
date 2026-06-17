@@ -26,6 +26,16 @@ source. No CLI, no server, free tier. This is the recommended path precisely
 because it makes "run your own instance" trivial — see the trust note below for
 why that matters. (Manual CLI / dashboard steps are further down if you prefer.)
 
+## Or: let your AI agent set it up for you 🤖
+
+Not sure where to start? **Copy the prompt in [`SETUP_PROMPT.md`](SETUP_PROMPT.md)
+into your AI agent** (Hermes, Claude, ChatGPT, Cursor, Codex…). It becomes a
+step-by-step wizard that guides you through deploying the Worker to your own
+Cloudflare account *and* wiring it into your Hermes Agent config — one step at a
+time, checking each before moving on. It's written to guide you through the
+browser login, config edit, and gateway restart (rather than doing those
+security-sensitive bits itself).
+
 ---
 
 ## ⚠️ Read this before you use ANY Telegram proxy
