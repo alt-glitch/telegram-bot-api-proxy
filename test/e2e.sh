@@ -83,12 +83,15 @@ else
     todo "wire config (step 3) then restart the gateway (you, not the agent — self-kill rule)"
   fi
 fi
-# Connection health: recent connect-timeout vs connected/ready
-RECENT=$(grep -iE "Telegram.*(timed out|Disconnected|Application started|Bot.*ready|getUpdates)" "$GWLOG" 2>/dev/null | tail -1)
-if echo "$RECENT" | grep -qi "timed out\|Disconnected"; then
-  todo "latest Telegram log is still a timeout/disconnect (expected until the proxy is live): ${RECENT##*telegram*: }"
+# Connection health: take the single most-recent Telegram connection event and
+# judge by what it is. MUST include the success signals or a stale timeout wins.
+RECENT=$(grep -iE "Telegram\] Connected to Telegram|✓ telegram connected|Connect attempt.*failed|Disconnected from Telegram|telegram connect timed out" "$GWLOG" 2>/dev/null | tail -1)
+if echo "$RECENT" | grep -qiE "Connected to Telegram|✓ telegram connected"; then
+  pass "Telegram is CONNECTED (latest event): ${RECENT##*: }"
+elif echo "$RECENT" | grep -qiE "timed out|failed|Disconnected"; then
+  todo "latest Telegram event is a timeout/disconnect — if you JUST restarted, wait ~30s and re-run; else the proxy isn't taking effect: ${RECENT##*telegram*: }"
 elif [ -n "$RECENT" ]; then
-  pass "latest Telegram log looks healthy: ${RECENT##*: }"
+  pass "latest Telegram event: ${RECENT##*: }"
 fi
 
 # ── 5. Optional real getMe ──────────────────────────────────────────────────
