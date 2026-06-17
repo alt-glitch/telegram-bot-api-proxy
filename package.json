@@ -1,0 +1,25 @@
+{
+  "name": "telegram-bot-api-proxy",
+  "version": "0.1.0",
+  "description": "A hardened Cloudflare Worker reverse proxy for the Telegram Bot API — reach api.telegram.org from regions where it is blocked. The bot token never touches a log line. Deploy your own.",
+  "type": "module",
+  "main": "src/worker.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "telegram",
+    "bot-api",
+    "cloudflare-workers",
+    "reverse-proxy",
+    "censorship",
+    "hermes-agent"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

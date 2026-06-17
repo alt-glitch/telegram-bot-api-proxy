@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Wrangler / Cloudflare local state
+.wrangler/
+.dev.vars
+wrangler.toml.bak
+
+# Logs / OS cruft
+*.log
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

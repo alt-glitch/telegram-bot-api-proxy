@@ -1,0 +1,14 @@
+name = "telegram-bot-api-proxy"
+main = "src/worker.js"
+compatibility_date = "2024-09-23"
+
+# This Worker has NO secrets and NO bindings — all config is the behavioural
+# CONFIG block in src/worker.js. Edit that before deploy if you want a country
+# gate or different rate limits.
+#
+# Deploy:   npx wrangler deploy
+# Dev:      npx wrangler dev        (then hit http://localhost:8787/healthz)
+#
+# After deploy, wrangler prints your URL, e.g.
+#   https://telegram-bot-api-proxy.<your-subdomain>.workers.dev
+# Use   <that-url>/bot   as Hermes' platforms.telegram.extra.base_url
